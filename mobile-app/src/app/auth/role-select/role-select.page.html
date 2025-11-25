@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ohrid Loyalty</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="role-select-container">
+    <h1>Welcome</h1>
+    <p>Select your role to continue</p>
+
+    <ion-button expand="block" size="large" (click)="selectOwner()" class="role-button">
+      <ion-icon name="business-outline" slot="start"></ion-icon>
+      Business Owner
+    </ion-button>
+
+    <ion-button expand="block" size="large" (click)="selectCustomer()" class="role-button">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      Customer
+    </ion-button>
+  </div>
+</ion-content>
+

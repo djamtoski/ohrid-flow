@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Business Name</ion-label>
+      <ion-input [(ngModel)]="businessName" placeholder="Your Business Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Primary Color</ion-label>
+      <ion-input type="color" [(ngModel)]="theme.primaryColor" (ionChange)="previewTheme()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Background Color</ion-label>
+      <ion-input type="color" [(ngModel)]="theme.backgroundColor" (ionChange)="previewTheme()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Reward Threshold</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="theme.rewardThreshold"
+        placeholder="10"
+        min="1"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Reward Name</ion-label>
+      <ion-input [(ngModel)]="theme.rewardName" placeholder="Free Coffee"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Welcome Text</ion-label>
+      <ion-textarea
+        [(ngModel)]="theme.welcomeText"
+        placeholder="Welcome to our loyalty program!"
+        rows="3"
+      ></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="saveSettings()" class="save-button">
+    Save Settings
+  </ion-button>
+</ion-content>
+

@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Customers</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="loadCustomers()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngIf="!isLoading && customers.length > 0">
+    <ion-item *ngFor="let customer of customers" (click)="viewCustomer(customer)" button>
+      <ion-avatar slot="start">
+        <ion-icon name="person-circle-outline" style="font-size: 2.5rem;"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ customer.name }}</h2>
+        <p>{{ customer.phone }}</p>
+        <p>Stamps: {{ customer.stamps }} | Rewards: {{ customer.totalRewards }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!isLoading && customers.length === 0" class="empty-state">
+    <ion-icon name="people-outline" style="font-size: 4rem; color: #ccc;"></ion-icon>
+    <p>No customers yet</p>
+  </div>
+
+  <ion-spinner *ngIf="isLoading" name="crescent" class="spinner"></ion-spinner>
+</ion-content>
+

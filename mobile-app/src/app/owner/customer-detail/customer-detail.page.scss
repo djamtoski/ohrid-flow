@@ -1,0 +1,26 @@
+.customer-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary, #2e2e2e);
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+.stamp-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .stamp-count {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary, #2e2e2e);
+  }
+}
+

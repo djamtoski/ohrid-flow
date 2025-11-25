@@ -1,0 +1,58 @@
+.loyalty-card-container {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary, #2e2e2e);
+    text-align: center;
+  }
+
+  .stamp-display {
+    margin-bottom: 2rem;
+  }
+
+  .stamps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stamp-circle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid var(--primary, #2e2e2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--primary, #2e2e2e);
+    background: white;
+    transition: all 0.3s;
+
+    &.filled {
+      background: var(--primary, #2e2e2e);
+      color: white;
+    }
+  }
+
+  .progress-info {
+    margin-bottom: 2rem;
+
+    .stamp-count {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--primary, #2e2e2e);
+    }
+  }
+
+  .rewards-section {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary, #2e2e2e);
+    }
+  }
+}
+

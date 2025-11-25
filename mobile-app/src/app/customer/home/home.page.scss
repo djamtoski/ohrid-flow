@@ -1,0 +1,40 @@
+.home-container {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary, #2e2e2e);
+  }
+
+  .action-card {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .stamp-preview {
+      text-align: center;
+      padding: 1rem;
+
+      .stamp-count {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary, #2e2e2e);
+        display: block;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+.spinner {
+  display: block;
+  margin: 2rem auto;
+}
+

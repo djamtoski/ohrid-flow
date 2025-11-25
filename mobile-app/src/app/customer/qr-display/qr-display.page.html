@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>My QR Code</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="qr-container">
+    <h1 *ngIf="customer">{{ customer.name }}</h1>
+    <p>Show this QR code to earn stamps</p>
+
+    <div class="qr-wrapper" *ngIf="qrDataUrl">
+      <img [src]="qrDataUrl" alt="QR Code" class="qr-image" />
+    </div>
+
+    <ion-spinner *ngIf="isLoading" name="crescent" class="spinner"></ion-spinner>
+
+    <div class="info-section">
+      <p class="info-text">
+        Present this QR code at participating businesses to collect stamps and earn rewards!
+      </p>
+    </div>
+  </div>
+</ion-content>
+

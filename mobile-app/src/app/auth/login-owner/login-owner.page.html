@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Owner Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-container">
+    <h1>Business Owner</h1>
+    <p>Sign in to manage your loyalty program</p>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        placeholder="your@email.com"
+        [disabled]="isLoading"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Enter password"
+        [disabled]="isLoading"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      size="large"
+      (click)="login()"
+      [disabled]="isLoading"
+      class="login-button"
+    >
+      Sign In
+    </ion-button>
+  </div>
+</ion-content>
+

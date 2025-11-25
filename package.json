@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@angular/fire": "^20.0.1",
+    "@capacitor/preferences": "^7.0.2",
+    "@types/qrcode": "^1.5.6",
+    "@zxing/library": "^0.21.3",
+    "@zxing/ngx-scanner": "^20.0.0",
+    "firebase": "^11.10.0",
+    "qrcode": "^1.5.4"
+  }
+}

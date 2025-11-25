@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary, #2e2e2e);
+  }
+
+  p {
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  ion-item {
+    margin-bottom: 1rem;
+    --background: transparent;
+  }
+
+  .login-button {
+    margin-top: 2rem;
+    --background: var(--primary, #2e2e2e);
+    --color: white;
+  }
+}
+

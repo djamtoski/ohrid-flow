@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>My Loyalty Card</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" *ngIf="customer">
+  <div class="loyalty-card-container">
+    <h1>Your Progress</h1>
+
+    <div class="stamp-display">
+      <div class="stamps-grid">
+        <div
+          *ngFor="let filled of getStampsArray(); let i = index"
+          class="stamp-circle"
+          [class.filled]="filled"
+        >
+          {{ i + 1 }}
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-info">
+      <p class="stamp-count">{{ customer.stamps }} / {{ threshold }} stamps</p>
+      <ion-progress-bar [value]="getProgressPercentage() / 100"></ion-progress-bar>
+    </div>
+
+    <div class="rewards-section" *ngIf="rewards.length > 0">
+      <h2>Your Rewards</h2>
+      <ion-list>
+        <ion-item *ngFor="let reward of rewards">
+          <ion-label>
+            <h2>{{ reward.rewardName }}</h2>
+            <p>Status: {{ reward.status }}</p>
+          </ion-label>
+          <ion-badge *ngIf="reward.status === 'pending'" color="success">Available</ion-badge>
+          <ion-badge *ngIf="reward.status === 'redeemed'" color="medium">Redeemed</ion-badge>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+

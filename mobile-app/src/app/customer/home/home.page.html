@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>My Loyalty</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="home-container" *ngIf="customer">
+    <h1>Welcome, {{ customer.name }}!</h1>
+
+    <ion-card (click)="navigateToLoyaltyCard()" class="action-card">
+      <ion-card-header>
+        <ion-card-title>My Loyalty Card</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="stamp-preview">
+          <span class="stamp-count">{{ customer.stamps }}</span>
+          <p>stamps collected</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="navigateToQrDisplay()" class="action-card">
+      <ion-card-header>
+        <ion-card-title>My QR Code</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Show your QR code to earn stamps</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-spinner *ngIf="isLoading" name="crescent" class="spinner"></ion-spinner>
+</ion-content>
+

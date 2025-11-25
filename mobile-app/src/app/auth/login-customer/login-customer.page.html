@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Customer Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-container">
+    <h1>Customer</h1>
+    <p>Sign in with your phone number</p>
+
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input
+        type="tel"
+        [(ngModel)]="phone"
+        placeholder="+389 70 123 456"
+        [disabled]="isLoading || otpSent"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      (click)="sendOtp()"
+      [disabled]="isLoading || otpSent"
+      class="otp-button"
+    >
+      {{ otpSent ? 'OTP Sent' : 'Send OTP' }}
+    </ion-button>
+
+    <ion-item *ngIf="otpSent">
+      <ion-label position="stacked">Enter OTP</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="otp"
+        placeholder="123456"
+        [disabled]="isLoading"
+        maxlength="6"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      *ngIf="otpSent"
+      expand="block"
+      size="large"
+      (click)="verifyOtp()"
+      [disabled]="isLoading"
+      class="verify-button"
+    >
+      Verify & Sign In
+    </ion-button>
+  </div>
+</ion-content>
+

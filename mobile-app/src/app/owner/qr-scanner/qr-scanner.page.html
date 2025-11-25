@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Scan QR Code</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="scanner-container">
+    <zxing-scanner
+      #scanner
+      [formats]="allowedFormats"
+      [enable]="scannerEnabled"
+      (scanSuccess)="onScanSuccess($event)"
+      class="scanner"
+    ></zxing-scanner>
+    
+    <div class="scanner-overlay">
+      <div class="scan-frame"></div>
+      <p class="instruction">Position QR code within the frame</p>
+    </div>
+  </div>
+</ion-content>
+

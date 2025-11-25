@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Owner Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="dashboard-container">
+    <h1>{{ user?.businessName || 'Business' }}</h1>
+    <p class="welcome-text">{{ getCurrentTheme()?.welcomeText || 'Welcome to your loyalty program' }}</p>
+
+    <div class="action-cards">
+      <ion-card (click)="navigateToScanner()" class="action-card">
+        <ion-card-header>
+          <ion-icon name="qr-code-outline" class="card-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <h2>Scan QR Code</h2>
+          <p>Scan a customer's QR code to add stamps</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="navigateToCustomers()" class="action-card">
+        <ion-card-header>
+          <ion-icon name="people-outline" class="card-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <h2>View Customers</h2>
+          <p>Manage your customer list</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="navigateToSettings()" class="action-card">
+        <ion-card-header>
+          <ion-icon name="settings-outline" class="card-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <h2>Settings</h2>
+          <p>Configure your loyalty program</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+

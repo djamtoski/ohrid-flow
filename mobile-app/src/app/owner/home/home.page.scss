@@ -1,0 +1,46 @@
+.dashboard-container {
+  padding: 1rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary, #2e2e2e);
+  }
+
+  .welcome-text {
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  .action-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .action-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      color: var(--primary, #2e2e2e);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary, #2e2e2e);
+    }
+
+    p {
+      color: #666;
+      margin: 0;
+    }
+  }
+}
+
